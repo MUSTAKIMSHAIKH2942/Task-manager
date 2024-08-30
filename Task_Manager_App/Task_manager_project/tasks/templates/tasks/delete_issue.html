@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Issue</title>
+</head>
+<body>
+    <h1>Are you sure you want to delete "{{ issue.summary }}"?</h1>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Delete</button>
+    </form>
+    <a href="{% url 'issue_list' %}">Cancel</a>
+</body>
+</html>

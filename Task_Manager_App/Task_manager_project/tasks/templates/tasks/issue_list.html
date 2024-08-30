@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Issues</title>
+</head>
+<body>
+    <h1>Issues</h1>
+    <a href="{% url 'create_issue' %}">Create New Issue</a>
+    <ul>
+        {% for issue in issues %}
+            <li><a href="{% url 'issue_detail' pk=issue.pk %}">{{ issue.summary }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

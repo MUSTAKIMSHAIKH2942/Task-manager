@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Projects</title>
+</head>
+<body>
+    <h1>Projects</h1>
+    <a href="{% url 'create_project' %}">Create New Project</a>
+    <ul>
+        {% for project in projects %}
+            <li><a href="{% url 'project_detail' pk=project.pk %}">{{ project.project_name }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

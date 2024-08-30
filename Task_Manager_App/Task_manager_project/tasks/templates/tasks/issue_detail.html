@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ issue.summary }}</title>
+</head>
+<body>
+    <h1>{{ issue.summary }}</h1>
+    <p>{{ issue.description }}</p>
+    <h2>Comments</h2>
+    <ul>
+        {% for comment in comments %}
+            <li>{{ comment.comment_text }} - {{ comment.user }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'create_comment' issue_pk=issue.pk %}">Add Comment</a>
+    <h2>Attachments</h2>
+    <ul>
+        {% for attachment in attachments %}
+            <li><a href="{{ attachment.file_path }}">{{ attachment.file_name }}</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'create_attachment' issue_pk=issue.pk %}">Add Attachment</a>
+</body>
+</html>
