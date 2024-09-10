@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'tasks',
-    'rest_framework'
+    'rest_framework',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -54,9 +55,12 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'Task_manager_project.urls'
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_METHODS = ['*']
 
 TEMPLATES = [
     {
@@ -89,10 +93,10 @@ WSGI_APPLICATION = 'Task_manager_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'T_M_DB',
-        'USER': 'postgres',
-        'PASSWORD': 'Scpl@2024',  # Ensure this is the correct password
-        'HOST': 'localhost',
+        'NAME': 't_m_db_kzcu',
+        'USER': 't_m_db_kzcu_user',
+        'PASSWORD': 'PIvNd6VoGRMKJjsIjJ9bHGE86IKIIeZT',  # Ensure this is the correct password
+        'HOST': 'dpg-crftbjjv2p9s73a2n6p0-a.oregon-postgres.render.com',
         'PORT': '5432',
     }
 }
