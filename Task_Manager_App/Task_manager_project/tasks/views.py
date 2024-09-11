@@ -4,7 +4,11 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .models import *
 from .Serializers import *
+from rest_framework import viewsets
 
+class UserTableViewSet(viewsets.ModelViewSet):
+    queryset = UserTable.objects.all()
+    serializer_class = UserTableSerializer
 
 # Project Views
 @api_view(['GET', 'POST'])

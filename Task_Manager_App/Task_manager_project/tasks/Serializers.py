@@ -1,5 +1,11 @@
 from rest_framework import serializers
-from .models import Project, Issue, Comment, Attachment, Workflow, WorkflowStep, IssueWorkflow, Permission, RolePermission, ProjectUser, IssueHistory, Sprint, IssueSprint, Label, IssueLabel, TimeTracking, Epic, EpicIssue, Project_table
+from .models import *
+
+class UserTableSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserTable
+        fields = ['id', 'email', 'first_name', 'last_name', 'date_joined', 'is_active']
+
 
 class ProjectSerializer(serializers.ModelSerializer):
     class Meta:
