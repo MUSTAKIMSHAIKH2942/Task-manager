@@ -1,6 +1,12 @@
 
 # Task-manager
-Backend using pytho Django and psql db for task manager
+Backend using python Django and psql db for task manager
+
+
+
+
+
+
 
 
 
